@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #fdf6ec;
+  --vanilla: #f7e7c6;
+  --blush: #f4cfc6;
+  --peach: #f2b79c;
+  --espresso: #3b2a24;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; background: var(--cream); }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--espresso);
+  font-family: Nunito, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible { outline: 3px solid var(--peach); outline-offset: 3px; border-radius: 6px; }
+
+/* Placeholder media: soft gradient shows while a real file is not yet set */
+.media-fallback {
+  background:
+    radial-gradient(circle at 25% 20%, rgba(255,255,255,.65), transparent 55%),
+    linear-gradient(135deg, var(--vanilla), var(--blush) 60%, var(--peach));
+}
+
+/* Soft scroll reveal (one gentle fade, used on section content) */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* Wave dividers */
+.wave { display: block; width: 100%; height: 60px; }
+@media (min-width: 768px) { .wave { height: 100px; } }
+
+/* Hero wave drifts slowly sideways for an organic feel */
+.wave-drift { animation: drift 14s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: translateX(-2%) scaleX(1.06); } to { transform: translateX(2%) scaleX(1.06); } }
+
+/* Carousel */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.product-card { transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s; }
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 26px 40px -24px rgba(59,42,36,.5); }
+
+/* Modal */
+.modal-veil { animation: veil .3s ease both; }
+.modal-panel { animation: panel .4s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes veil { from { opacity: 0; } }
+@keyframes panel { from { opacity: 0; transform: translateY(28px) scale(.95); } }
+
+/* Testimonial cross-fade */
+.fade-slide { transition: opacity 1s ease, transform 1s ease; }
+
+/* Social tile hover play icon */
+.play-badge { transition: opacity .35s ease, transform .35s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
