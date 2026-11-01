@@ -1,10 +1,10 @@
 // Swap each placeholder string for a real file path or URL (e.g. '/media/hero.mp4').
 export const ASSETS = {
-  logo: '[INSERT_BAKERY_LOGO_HERE]',
-  heroVideo: '[INSERT_HIGH_RES_BAKING_PROCESS_VIDEO_HERE]',
-  pastry: '[INSERT_CAKE_OR_PASTRY_IMAGE_HERE]',
-  reel: '[INSERT_SOCIAL_MEDIA_REEL_VIDEO_HERE]',
-  brandPhoto: '[INSERT_AESTHETIC_BRAND_PHOTO_HERE]',
+  logo: 'bakery\src\assets\logo.jpg',
+  heroVideo: 'bakery\src\assets\video.mp4',
+  pastry: 'bakery/src/assets/cake.jpg',
+  reel: 'bakery\src\assets\video.mp4',
+  brandPhoto: 'bakery\src\assets\logo2.jpg',
   review: '[INSERT_CUSTOMER_REVIEW_IMAGE_HERE]',
-  pattern: '[INSERT_BRAND_PATTERN_BACKGROUND_HERE]',
+  pattern: 'bakery\src\assets\logo2.jpg',
 };
